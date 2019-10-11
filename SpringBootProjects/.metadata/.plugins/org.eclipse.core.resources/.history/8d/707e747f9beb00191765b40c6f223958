@@ -1,0 +1,16 @@
+package com.phillip.languages.services;
+
+import org.springframework.stereotype.Service;
+
+import com.phillip.languages.repositories.LanguageRepository;
+
+
+@Service
+public class LanguageService {
+	private final LanguageRepository languageRepo;
+	
+	public LanguageService(LanguageRepository languageRepo) {
+        this.languageRepo = languageRepo;
+    }
+
+}

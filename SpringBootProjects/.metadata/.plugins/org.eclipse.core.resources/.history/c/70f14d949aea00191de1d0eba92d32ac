@@ -1,0 +1,28 @@
+package com.phillip.displayDate;
+
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+
+@Controller
+public class HomeController {
+	 
+	@RequestMapping("/")
+	public String home(Model model, HttpSession session) {
+		session.setAttribute("count", 0);
+		return "index.jsp";
+	}
+	@RequestMapping("/counter")
+	public String time(Model model, HttpSession session) {
+		session.setAttribute("count", +1);
+		 Integer count = (Integer) session.getAttribute("count");
+		model.addAttribute("count", count);
+		return "redirect:counter";
+	}
+	
+	
+}

@@ -1,0 +1,75 @@
+package com.phillip.languages.services;
+
+import java.awt.print.Book;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
+import com.phillip.languages.models.Language;
+import com.phillip.languages.repositories.LanguageRepository;
+
+
+@Service
+public class LanguageService {
+	private final LanguageRepository languageRepo;
+	
+	public LanguageService(LanguageRepository languageRepo) {
+        this.languageRepo = languageRepo;
+    }
+	// returns all the languages
+    public List<Language> allLanguages() {
+        return languageRepo.findAll();
+    }
+    // creates a language
+    public Language createLanguage(Language lang) {
+        return languageRepo.save(lang);
+    }
+    // retrieves a language
+    public Language findLanguage(Long id) {
+        Optional<Language> optionalLang = languageRepo.findById(id);
+        if(optionalLang.isPresent()) {
+            return optionalLang.get();
+        } else {
+            return null;
+        }
+    }
+    public void deleteLanguage(Long id) {
+    	Optional<Language> optionalLang = languageRepo.findById(id);
+        if(optionalLang.isPresent()) {
+        	Language thisLang=optionalLang.get();
+            languageRepo.delete(thisLang);
+        } 
+    }
+    public Language updateLang(Long id, String name, String creator, String version) {
+        Optional<Language> optionalLang = languageRepo.findById(id);
+        if(optionalLang.isPresent()) {
+        	Language thisLang = optionalLang.get();
+        	thisLang.set
+        	thisLang.setDescription(desc);
+        	thisLang.setLanguage(lang);
+        	
+        	
+        	return bookRepository.save(thisBook);
+        	
+        } else {
+            return null;
+        }
+    }
+    public Book updateBook(Book book) {
+    	Optional<Book> optionalBook = bookRepository.findById(book.getId());
+        if(optionalBook.isPresent()) {
+        	Book thisBook = optionalBook.get();
+        	thisBook.setTitle(book.getTitle());
+        	thisBook.setDescription(book.getDescription());
+        	thisBook.setLanguage(book.getLanguage());
+        	thisBook.setNumberOfPages(book.getNumberOfPages());
+        	
+        	return bookRepository.save(thisBook);
+        	
+        } else {
+            return null;
+        }
+    }
+
+}
