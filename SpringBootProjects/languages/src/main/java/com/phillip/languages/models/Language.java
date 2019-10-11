@@ -21,7 +21,7 @@ public class Language {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
-	@Size(min=5, max=200)
+	@Size(min=1, max=200)
 	private String name;
 	@Size(min=1, max=200)
 	private String creator;

@@ -25,13 +25,13 @@ private final LanguageService langService;
     }
 
     @RequestMapping(value="/")
-    public String index(Model model) {
+    public String index(Model model, @ModelAttribute("language") Language language) {
         List<Language> languages = langService.allLanguages();
         model.addAttribute("languages", languages);
         return "/languages/index.jsp";
     }
     
-    @RequestMapping(value="/languages", method=RequestMethod.POST)
+    @RequestMapping(value="/language", method=RequestMethod.POST)
     public String create(@Valid @ModelAttribute("languages") Language language, BindingResult result) {
         if (result.hasErrors()) {
         	return "redirect:/";
@@ -46,25 +46,25 @@ private final LanguageService langService;
         model.addAttribute("language", language);
         return "languages/show.jsp";
     }
-    @RequestMapping("/languages/{id}/edit")
+    @RequestMapping("/languages/edit/{id}")
     public String edit(@PathVariable("id") Long id, Model model) {
     	Language language = langService.findLanguage(id);
         model.addAttribute("language", language);
         return "/languages/edit.jsp";
     }
     
-    @RequestMapping(value="/languages/edit/{id}", method=RequestMethod.PUT)
+    @RequestMapping(value="/languages/edit/{id}", method=RequestMethod.POST)
     public String update(@Valid @ModelAttribute("language") Language language, BindingResult result) {
         if (result.hasErrors()) {
             return "/languages/edit.jsp";
         } else {
             langService.updateLanguage(language);
-            return "redirect:/languages";
+            return "redirect:/";
         }
     }
-    @RequestMapping(value="/books/delete/{id}", method=RequestMethod.DELETE)
+    @RequestMapping(value="/languages/delete/{id}", method=RequestMethod.GET)
     public String destroy(@PathVariable("id") Long id) {
         langService.deleteLanguage(id);
-        return "redirect:/languages";
+        return "redirect:/";
     }
 }
