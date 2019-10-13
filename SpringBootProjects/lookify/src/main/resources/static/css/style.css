@@ -1,0 +1,172 @@
+@charset "ISO-8859-1";
+
+
+* {
+    vertical-align: baseline;
+    font-weight: inherit;
+    font-family: 'Rubik', sans-serif;
+    font-style: inherit;
+    font-size: 100%;
+    border: 0 none;
+    outline: 0;
+    padding: 0;
+    
+    }
+
+    .navbutton{
+        text-decoration: none;
+        color: black;
+        display: inline-block;
+        
+    }
+    .time{
+    	padding: 0px 50px;
+    	
+    }
+    
+    button{
+        margin-left: 15px;
+        background-color: white;
+        border: 3px solid black;
+        color: black;
+        box-shadow: 4px 4px rgb(27, 26, 26);
+        padding: 8px 12px;
+        margin-top: 15px;
+    }
+    
+    .wrapper {
+        text-align: center;
+        margin: 0px auto;
+        vertical-align: top;
+        width: 1200px;
+        
+    }
+    .display{
+        text-align: left;
+        width: 1000px;
+        margin-left: 142px;
+              
+    }
+    .subtitle{
+        margin-left: 60px;
+    }
+    .header{
+        text-align: left;
+        vertical-align: bottom;
+        position: relative;
+    }  
+    .headerL{
+        text-align: left;
+        vertical-align: top;
+        display: inline-block;
+        margin-top:20px;
+        
+    }
+    .headerL a{
+    	margin: 0px 15px;
+    }
+    .headerR{
+        text-align: right;
+        vertical-align: top;
+        display: inline-block;
+        position: relative;
+        left: 480px;
+        top: -20px;
+    }
+    #logo{
+        width: 40px;
+        display: inline-block;
+    }
+    
+    .home-button{
+        margin-top: 30px;
+        margin-right: 90px;
+    }
+    .main{
+       
+        padding: 1em 1em;
+        border: 1px solid rgb(228, 231, 230);
+        text-align: center;
+        display: inline-block;
+        margin: 50px 0px;
+    }
+    .main table{
+    	text-align: left;
+    }
+    .sidebar{
+        width: 400px;
+        padding: 0em 1em;
+        display: inline-block;
+        vertical-align: top;
+        /* margin-top: 20px; */
+        text-align: left;
+        margin-left: 2em;
+        border: 2px solid rgb(228, 231, 230);
+    }
+    #site_title{
+        text-align: left;
+        margin-left: 15px;
+        color:rgb(36, 173, 127);
+        display: inline-block;
+    }
+    .errors{
+        color: red;
+    }
+    
+    h1{
+        font-size: 40px;
+        font-weight: bold;
+        margin-bottom: .3em;
+    }
+    th, td{
+        padding: 8px 15px;
+        margin: 20px 0;
+        
+    }
+    th{
+    	border-bottom: 1px solid rgb(228, 231, 230);
+    }
+    table{
+        margin: 20px auto;
+    }
+    
+    form{
+        margin: 20px 0px;
+    }
+    form input{
+        padding: 5px;
+        background-color: rgb(207, 206, 206);
+        border: 1px solid gray;
+        width: 100%;
+    }
+    textarea{
+        padding: 5px;
+        margin: 0px 20px 20px 0px;
+        background-color: rgb(207, 206, 206);
+        border: 1px solid gray;
+        width: 500px;
+    }
+    
+    
+    .delete{
+        background-color: red;
+    
+    }
+    
+    h2{
+        font-weight: bold;
+        font-size: 25px;
+    }
+    
+    span, h3{
+        font-weight: bold;
+    }
+    ul{
+        margin-left: 20px;
+    }
+    .italics{
+        font-size: 12px;
+        font-style: italic;
+    }
+
+   
